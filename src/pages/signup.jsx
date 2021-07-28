@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -5,6 +8,8 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
+
+import axios from 'axios';
 
 const useStyle = makeStyles((theme) => ({
 	rootcontainer: {
@@ -41,12 +46,32 @@ const useStyle = makeStyles((theme) => ({
 	},
 }));
 
-export default function Singup() {
+export default function Singup({ updateLoginState }) {
+	const history = useHistory();
 	const classes = useStyle();
+
+	const [state, setstate] = useState({ name: '', email: '', contactNo: '', zipcode: '', address: '', password: '' });
+
+	const handleChange = (e) => {
+		setstate((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
+	};
+
+	const handleSignUp = async () => {
+		const res = await axios.post(`${process.env.REACT_APP_API_BASEURL}auth/register`, state);
+		if (res.status === 200 && res.data.accessToken) {
+			alert('Registration successful.');
+			localStorage.setItem('token', `Bearer ${res.data.accessToken}`);
+			localStorage.setItem('user', `Bearer ${res.data.data.id}`);
+			updateLoginState(true);
+			history.push('/');
+		} else {
+			alert('Something went wrong.');
+		}
+	};
 
 	return (
 		<Grid container direction='row' justifyContent='center' alignItems='center' style={{ minHeight: '100vh' }}>
-			<Grid xs={12} sm={6}>
+			<Grid item xs={12} sm={6}>
 				<Paper className={classes.rootcontainer}>
 					<div>
 						<Grid container direction='row' justifyContent='center' alignItems='center' className={classes.header}>
@@ -55,25 +80,25 @@ export default function Singup() {
 					</div>
 					<Grid container direction='row' justifyContent='center' alignItems='center' className={classes.body} spacing={2}>
 						<Grid item xs={8}>
-							<TextField fullWidth label='Name' name='username' variant='outlined' />
+							<TextField fullWidth label='Name' name='name' variant='outlined' onChange={handleChange} value={state.name} />
 						</Grid>
 						<Grid item xs={8}>
-							<TextField fullWidth label='Email' variant='outlined' name='email' type='email' />
+							<TextField fullWidth label='Email' variant='outlined' name='email' type='email' onChange={handleChange} value={state.email} />
 						</Grid>
 						<Grid item xs={8}>
-							<TextField fullWidth label='Contact no.' variant='outlined' type='number' />
+							<TextField fullWidth label='Contact no' name='contactNo' variant='outlined' type='number' onChange={handleChange} value={state.contactNo} />
 						</Grid>
 						<Grid item xs={8}>
-							<TextField fullWidth label='Zip' variant='outlined' type='number' />
+							<TextField fullWidth label='PostCode' name='zipcode' variant='outlined' type='number' onChange={handleChange} value={state.zipcode} />
 						</Grid>
 						<Grid item xs={8}>
-							<TextField fullWidth label='Address' variant='outlined' type='textarea' name='address' />
+							<TextField fullWidth label='Address' variant='outlined' type='textarea' name='address' onChange={handleChange} value={state.address} />
 						</Grid>
 						<Grid item xs={8}>
-							<TextField fullWidth label='password' variant='outlined' name='password' type='password' />
+							<TextField fullWidth label='password' variant='outlined' name='password' type='password' onChange={handleChange} value={state.password} />
 						</Grid>
 						<Grid item xs={8}>
-							<Button variant='contained' size='medium' color='primary' fullWidth className={classes.btn}>
+							<Button variant='contained' size='medium' color='primary' fullWidth className={classes.btn} onClick={handleSignUp}>
 								Signup
 							</Button>
 						</Grid>

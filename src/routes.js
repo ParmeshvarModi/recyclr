@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 const Home = lazy(() => import('pages/home'));
 const Login = lazy(() => import('pages/login'));
 const Signup = lazy(() => import('pages/signup'));
+const Orders = lazy(() => import('pages/Orders'));
 
 const SuspenseFallbackComponent = () => {
 	return (
@@ -19,12 +20,13 @@ const SuspenseFallbackComponent = () => {
 	);
 };
 
-const Routes = () => {
+const Routes = ({ updateLoginState }) => {
 	return (
 		<Suspense fallback={<SuspenseFallbackComponent />}>
 			<Switch>
-				<Route path='/login' component={Login} />
-				<Route path='/signup' component={Signup} />
+				<Route path='/login' component={() => <Login updateLoginState={updateLoginState} />} />
+				<Route path='/signup' component={() => <Signup updateLoginState={updateLoginState} />} />
+				<Route path='/orders' component={Orders} />
 				<Route path='/' exact component={Home} />
 				<Route path='*' component={Home} />
 			</Switch>
