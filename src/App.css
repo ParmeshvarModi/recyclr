@@ -1,0 +1,5 @@
+.MuiInput-underline::after,
+.MuiInput-underline::before,
+.MuiInput-underline:hover {
+	border-bottom: none !important;
+}
