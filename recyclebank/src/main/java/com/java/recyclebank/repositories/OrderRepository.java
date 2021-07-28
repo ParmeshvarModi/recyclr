@@ -1,0 +1,7 @@
+package com.java.recyclebank.repositories;
+
+import com.java.recyclebank.models.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<Order, String> {
+}
