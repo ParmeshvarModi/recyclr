@@ -6,12 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
-import AutomotiveBox from './sublist/Automotive';
-import FoilBox from './sublist/Foil';
-import GlassBox from './sublist/GlassGlass';
-import CardboardBox from './sublist/Cardboard';
-import FoodWasteBox from './sublist/FoodWaste';
+import ItemSelectionListOptionsBox from './sublist/ItemSelectionListOptions';
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -45,8 +42,17 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: theme.palette.background.paper,
 		display: 'flex',
 		height: '100%',
+		borderTopLeftRadius: 0,
+		borderTopRightRadius: 0,
 	},
-
+	headerBtnContainer: {
+		display: 'flex',
+		justifyContent: 'flex-end',
+		padding: '10px 15px',
+		borderBottomLeftRadius: 0,
+		borderBottomRightRadius: 0,
+		backgroundColor: '#8bc63e',
+	},
 	tabs: {
 		borderRight: `1px solid ${theme.palette.divider}`,
 	},
@@ -58,142 +64,19 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: 'row',
 		justifyContent: 'flex-start',
 	},
+	btn: {
+		backgroundColor: '#517700',
+		borderRadius: '4px',
+		fontWeight: 600,
+		'&:hover': {
+			background: '#517700e1',
+		},
+	},
 }));
 
-export default function ItemSelectionBox() {
-	const itemList = ['Automotive', 'Foil', 'Glass', 'Cardboard', 'Food waste', 'Automotive', 'Foil', 'Glass', 'Cardboard', 'Food waste'];
-	const [dataList, setDataList] = useState({
-		Automotive: [
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-		],
-		Foil: [
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-		],
-		Glass: [
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-		],
-		Cardboard: [
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-		],
-		FoodWaste: [
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-			{
-				title: 'data 1',
-				selected: false,
-			},
-		],
-	});
+export default function ItemSelectionBox({ dataList, setDataList, loadLocationPage }) {
+	const itemList = ['Books', 'Paper waste', 'Foil', 'Plastic', 'Materials', 'Silicon', 'Electronics and Electrical', 'Others'];
+
 	const classes = useStyles();
 	const [value, setValue] = useState(0);
 
@@ -207,43 +90,25 @@ export default function ItemSelectionBox() {
 
 	return (
 		<Container className={classes.root}>
-			<Paper className={classes.mainContainer}>
-				<Tabs orientation='vertical' variant='scrollable' value={value} onChange={handleChange} aria-label='Vertical tabs example' className={classes.tabs}>
-					{itemList.map((e, index) => (
-						<Tab label={e} {...a11yProps(index)} key={'options-list-' + index} classes={{ wrapper: classes.row }} />
+			<div className={classes.root}>
+				<Paper className={classes.headerBtnContainer}>
+					<Button variant='contained' size='medium' color='primary' className={classes.btn} onClick={loadLocationPage}>
+						Continue
+					</Button>
+				</Paper>
+				<Paper className={classes.mainContainer}>
+					<Tabs orientation='vertical' variant='scrollable' value={value} onChange={handleChange} aria-label='Vertical tabs example' className={classes.tabs}>
+						{itemList.map((e, index) => (
+							<Tab label={e} {...a11yProps(index)} key={'options-list-' + index} classes={{ wrapper: classes.row }} />
+						))}
+					</Tabs>
+					{Object.entries(dataList).map((e, index) => (
+						<TabPanel value={value} index={index} className={classes.tabPlane} key={'list-item-' + index}>
+							<ItemSelectionListOptionsBox list={e[1]} updateList={updateList} title={e[0]} />
+						</TabPanel>
 					))}
-				</Tabs>
-				<TabPanel value={value} index={0} className={classes.tabPlane}>
-					<AutomotiveBox list={dataList.Automotive} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={1} className={classes.tabPlane}>
-					<FoilBox list={dataList.Foil} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={2} className={classes.tabPlane}>
-					<GlassBox list={dataList.Glass} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={3} className={classes.tabPlane}>
-					<CardboardBox list={dataList.Cardboard} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={4} className={classes.tabPlane}>
-					<FoodWasteBox list={dataList.FoodWaste} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={5} className={classes.tabPlane}>
-					<AutomotiveBox list={dataList.Automotive} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={6} className={classes.tabPlane}>
-					<FoilBox list={dataList.Foil} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={7} className={classes.tabPlane}>
-					<GlassBox list={dataList.Glass} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={8} className={classes.tabPlane}>
-					<CardboardBox list={dataList.Cardboard} updateList={updateList} />
-				</TabPanel>
-				<TabPanel value={value} index={9} className={classes.tabPlane}>
-					<FoodWasteBox list={dataList.FoodWaste} updateList={updateList} />
-				</TabPanel>
-			</Paper>
+				</Paper>
+			</div>
 		</Container>
 	);
 }

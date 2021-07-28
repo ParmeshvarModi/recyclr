@@ -1,10 +1,13 @@
+import { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+
 import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({
 	rootcontainer: {
@@ -41,12 +44,32 @@ const useStyle = makeStyles((theme) => ({
 	},
 }));
 
-export default function Login() {
+export default function Login({ updateLoginState }) {
 	const classes = useStyle();
+	const history = useHistory();
+	const [state, setstate] = useState({ email: '', password: '' });
+
+	const handleChange = (e) => {
+		setstate((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
+	};
+
+	const handleLogin = async () => {
+		const res = await axios.post(`${process.env.REACT_APP_API_BASEURL}auth/login`, state);
+		if (res.status === 200 && res.data.access_token) {
+			alert(res.data.message);
+			localStorage.setItem('token', `Bearer ${res.data.access_token}`);
+			localStorage.setItem('user', `Bearer ${res.data.data.id}`);
+			updateLoginState(true);
+			history.push('/');
+		} else {
+			if (res.data?.message) alert(res.data.message);
+			else alert('Something went wrong.');
+		}
+	};
 
 	return (
 		<Grid container direction='row' justifyContent='center' alignItems='center' style={{ minHeight: '100vh' }}>
-			<Grid xs={12} sm={6}>
+			<Grid item xs={12} sm={6}>
 				<Paper className={classes.rootcontainer}>
 					<div>
 						<Grid container direction='row' justifyContent='center' alignItems='center' className={classes.header}>
@@ -55,14 +78,14 @@ export default function Login() {
 					</div>
 					<Grid container direction='row' justifyContent='center' alignItems='center' className={classes.body} spacing={2}>
 						<Grid item xs={8}>
-							<TextField fullWidth label='username' variant='outlined' />
+							<TextField fullWidth label='Email' variant='outlined' name='email' onChange={handleChange} value={state.email} />
 						</Grid>
 						<Grid item xs={8}>
-							<TextField fullWidth label='password' variant='outlined' type='password' />
+							<TextField fullWidth label='password' variant='outlined' type='password' name='password' onChange={handleChange} value={state.password} />
 						</Grid>
 						<Grid item xs={8}>
-							<Button variant='contained' size='medium' color='primary' fullWidth className={classes.btn}>
-								Search
+							<Button variant='contained' size='medium' color='primary' fullWidth className={classes.btn} onClick={handleLogin}>
+								Login
 							</Button>
 						</Grid>
 					</Grid>

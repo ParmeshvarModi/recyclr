@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RecyclebankApplication<recyclebank>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.java.recyclebank.RecyclebankApplication",
+            "projectName": "recyclebank",
+            "args": ""
+        }
+    ]
+}
