@@ -1,0 +1,52 @@
+objectid,x,y,site_name_,ward,charitybanks,booksmusic,cansfoil,cansplasticbottles,plasticbottles,textiles,weee,glass,shoes,cartons,books,cardboard,paper,address,categories
+1,-1.1001708760,53.9925224700,Dunelm Mill Shop,Rawcliffe and Clifton Without,No,No,No,No,No,Yes,No,No,Yes,No,Yes,No,No,Dunelm Mill Shop,textiles|shoes|books|
+2,-1.0965418230,53.9607491100,National Railway Museum,Holgate,No,No,Yes,No,No,No,No,Yes,Yes,No,No,No,Yes,National Railway Museum,cansfoil|glass|shoes|paper|
+3,-1.1206641520,53.9638762500,"Ainsty Car Park, Carr Lane",Holgate,No,No,No,No,No,No,No,Yes,No,No,No,No,No,"Ainsty Car Park, Carr Lane",glass|
+4,-1.0724166020,53.9627223500,"Asda, Layerthorpe",Guildhall,Yes,No,No,No,No,Yes,No,No,Yes,No,Yes,No,Yes,"Asda, Layerthorpe",textiles|shoes|books|paper|
+5,-1.0434616040,53.9864580300,"Asda, Monks Cross",Huntington and New Earswick,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,No,Yes,"Asda, Monks Cross",booksmusic|cansfoil|glass|shoes|cartons|books|paper|
+6,-1.1614840170,53.9206390000,Askham Bryan College,Rural West York,Yes,No,No,Yes,No,Yes,No,No,No,No,No,No,Yes,Askham Bryan College,cansplasticbottles|textiles|paper|
+7,-1.0266741690,53.9549091500,"B & Q, Hull Road",Osbaldwick and Derwent,Yes,No,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Yes,"B & Q, Hull Road",cansfoil|plasticbottles|textiles|weee|glass|shoes|cardboard|paper|
+8,-1.0726378440,53.9526499300,"Barbican Road, Junction with Kent Street",Fishergate,Yes,No,No,No,No,Yes,No,No,No,No,No,No,No,"Barbican Road, Junction with Kent Street",textiles|
+9,-1.0678768110,53.9776435900,Bell Farm Community Centre,Heworth,No,No,No,Yes,No,No,No,Yes,No,No,No,No,Yes,Bell Farm Community Centre,cansplasticbottles|glass|paper|
+10,-1.0854871800,53.9512278700,Bishopthorpe Road Car Park,Micklegate,Yes,Yes,Yes,No,No,Yes,No,Yes,Yes,No,No,No,Yes,Bishopthorpe Road Car Park,booksmusic|cansfoil|textiles|glass|shoes|paper|
+11,-1.0698397570,53.9408881100,"Broadway shops, Fulford",Fishergate,Yes,No,No,No,No,Yes,No,No,No,No,No,No,Yes,"Broadway shops, Fulford",textiles|paper|
+12,-1.0971441080,53.9540484700,"Cambridge Street, Holgate Rd",Micklegate,Yes,No,No,No,No,Yes,No,No,Yes,No,No,No,Yes,"Cambridge Street, Holgate Rd",textiles|shoes|paper|
+13,-1.0530725650,53.9535568400,"Co-op, Hull Road",Hull Road,No,No,No,No,No,No,No,No,No,No,No,No,Yes,"Co-op, Hull Road",paper|
+14,-1.1366174420,53.9148088000,Copmanthorpe Recreation Centre,Copmanthorpe,No,No,No,Yes,No,No,No,No,No,No,No,No,No,Copmanthorpe Recreation Centre,cansplasticbottles|
+15,-1.0141216360,53.9895643600,"Deans Garden Centre, Stockton on the Forest",Strensall,Yes,No,No,Yes,No,Yes,No,Yes,No,No,No,No,Yes,"Deans Garden Centre, Stockton on the Forest",cansplasticbottles|textiles|glass|paper|
+16,-1.0366738750,53.9600771300,Derwent Arms,Osbaldwick and Derwent,No,No,No,No,No,No,No,Yes,No,No,No,No,No,Derwent Arms,glass|
+17,-1.0663229250,53.9653086600,East Parade Car Park,Heworth,No,No,No,No,No,No,No,No,No,No,No,No,Yes,East Parade Car Park,paper|
+18,-1.0273270850,53.9917724600,Elvington Caravan Club,Wheldrake,No,No,No,Yes,No,No,No,Yes,No,No,No,No,Yes,Elvington Caravan Club,cansplasticbottles|glass|paper|
+19,-0.9537035160,53.9240670700,Elvington Scout Hut,Wheldrake,No,No,No,No,No,No,No,No,No,No,No,No,Yes,Elvington Scout Hut,paper|
+20,-1.0683361810,53.9878038800,Flag & Whistle Pub car Park,Huntington and New Earswick,Yes,No,No,No,No,Yes,No,Yes,Yes,No,No,No,No,Flag & Whistle Pub car Park,textiles|glass|shoes|
+21,-0.9986495680,53.9968246900,"Fox Inn Pub, Stockton on the Forest",Strensall,Yes,No,No,No,No,Yes,No,No,Yes,No,No,No,No,"Fox Inn Pub, Stockton on the Forest",textiles|shoes|
+22,-1.1342181300,53.9637233400,"Green Tree Pub, Beckfield Lane",Acomb,Yes,No,No,No,No,Yes,No,No,No,No,No,No,No,"Green Tree Pub, Beckfield Lane",textiles|
+23,-1.0191632330,53.9548210500,Grimston Bar Park and Ride,Osbaldwick and Derwent,No,No,No,Yes,No,No,No,Yes,No,No,No,No,Yes,Grimston Bar Park and Ride,cansplasticbottles|glass|paper|
+24,-1.0748502990,53.9958836800,"Hartrigg Oaks, New Earswick",Huntington and New Earswick,No,No,No,Yes,No,No,No,Yes,No,No,No,No,Yes,"Hartrigg Oaks, New Earswick",cansplasticbottles|glass|paper|
+25,-1.0797983630,53.9701221300,"Jaipur Spice car park, Haxby Rd",Guildhall,Yes,No,No,No,No,Yes,No,No,No,No,No,No,No,"Jaipur Spice car park, Haxby Rd",textiles|
+26,-1.0552933510,53.9537048500,Hull Road with junction with Garrow Hill Av.,Hull Road,Yes,No,No,No,No,Yes,No,No,No,No,No,No,No,Hull Road with junction with Garrow Hill Av.,textiles|
+27,-1.0980478980,53.9486640000,"Knavesmire Road, Micklegate Stray",Micklegate,Yes,No,No,No,No,Yes,No,No,Yes,No,No,No,No,"Knavesmire Road, Micklegate Stray",textiles|shoes|
+28,-1.0441538010,53.9575662500,Magnet Inn,Osbaldwick and Derwent,Yes,No,No,No,No,No,No,Yes,No,No,No,No,No,Magnet Inn,glass|
+29,-1.1120626500,53.9892043700,Manor Lane Caravan Park,Rawcliffe and Clifton Without,No,No,No,Yes,No,No,No,Yes,No,No,No,No,Yes,Manor Lane Caravan Park,cansplasticbottles|glass|paper|
+30,-1.1339678100,53.9802143700,Maxi's Restaurant Car Park,Rural West York,No,No,No,No,No,No,No,Yes,No,No,No,No,No,Maxi's Restaurant Car Park,glass|
+31,-1.0782775950,53.9644302800,Monk Bar Car Park,Guildhall,Yes,No,No,Yes,No,Yes,No,Yes,No,No,No,No,Yes,Monk Bar Car Park,cansplasticbottles|textiles|glass|paper|
+32,-1.1257509790,53.9546196500,"Morrisons, Acomb",Westfield,Yes,No,Yes,No,No,Yes,No,Yes,Yes,No,No,No,Yes,"Morrisons, Acomb",cansfoil|textiles|glass|shoes|paper|
+33,-1.0961927470,53.9516510200,Mount Royal Hotel,Micklegate,No,No,No,No,No,No,No,Yes,No,No,No,No,No,Mount Royal Hotel,glass|
+34,-1.0775191830,53.9221980200,Naburn Designer Outlet,Fulford and Heslington,Yes,No,No,Yes,No,Yes,Yes,Yes,No,No,No,No,Yes,Naburn Designer Outlet,cansplasticbottles|textiles|weee|glass|paper|
+35,-1.0961460580,53.8941346300,Naburn Lock Caravan Park,Wheldrake,No,No,No,Yes,No,No,No,Yes,No,No,No,No,Yes,Naburn Lock Caravan Park,cansplasticbottles|glass|paper|
+36,-1.0895804820,53.9549800700,Nunnery Lane Car Park,Micklegate,Yes,No,No,No,No,Yes,No,Yes,Yes,No,No,No,Yes,Nunnery Lane Car Park,textiles|glass|shoes|paper|
+37,-1.1564553390,53.9849583000,Poppleton Community Sports Pavillion,Rural West York,Yes,No,No,Yes,No,Yes,No,Yes,No,No,No,No,Yes,Poppleton Community Sports Pavillion,cansplasticbottles|textiles|glass|paper|
+38,-1.1466944570,53.9722974900,Poppleton Garden Centre,Rural West York,No,No,No,No,No,No,No,No,No,No,No,No,Yes,Poppleton Garden Centre,paper|
+39,-1.1077460420,53.9514042900,Puss 'n' Boots Pub Car Park,Holgate,Yes,No,No,No,No,No,No,Yes,Yes,No,No,No,No,Puss 'n' Boots Pub Car Park,glass|shoes|
+40,-1.1337926530,53.9379599700,Quakerwood Car Park,Dringhouses and Woodthorpe,Yes,No,No,No,No,Yes,No,No,No,No,No,No,Yes,Quakerwood Car Park,textiles|paper|
+41,-1.1234981180,53.9850099600,Rawcliffe Bar Park & Ride,Rawcliffe and Clifton Without,Yes,No,No,Yes,No,Yes,Yes,Yes,Yes,No,No,No,Yes,Rawcliffe Bar Park & Ride,cansplasticbottles|textiles|weee|glass|shoes|paper|
+42,-1.1462464590,53.9614003400,"Red Lion Inn Car Park, Knapton",Rural West York,No,No,No,No,No,No,No,Yes,No,No,No,No,No,"Red Lion Inn Car Park, Knapton",glass|
+43,-1.0682001590,53.9525479000,Regent Street junction with Wellington Street,Fishergate,Yes,No,No,No,No,Yes,No,No,No,No,No,No,No,Regent Street junction with Wellington Street,textiles|
+44,-1.1835632670,53.9245119200,"Rose & Crown Pub, Askham Richard",Rural West York,No,No,No,No,No,No,No,Yes,No,No,No,No,Yes,"Rose & Crown Pub, Askham Richard",glass|paper|
+45,-1.0954403630,53.9236825700,St Andrews Church Car Park,Bishopthorpe,No,No,No,No,No,No,No,No,No,Yes,No,No,Yes,St Andrews Church Car Park,cartons|paper|
+46,-1.0798691740,53.9537735500,St George's Field Car Park,Guildhall,Yes,No,Yes,No,No,Yes,No,Yes,Yes,No,No,No,Yes,St George's Field Car Park,cansfoil|textiles|glass|shoes|paper|
+47,-0.9996281900,53.9069856900,Swallow Hall Golf Club,Wheldrake,No,No,No,Yes,No,No,No,Yes,No,No,No,No,Yes,Swallow Hall Golf Club,cansplasticbottles|glass|paper|
+48,-1.1158733360,53.9310163200,"Tesco, Tadcaster Rd",Dringhouses and Woodthorpe,Yes,Yes,Yes,No,Yes,Yes,No,Yes,No,Yes,No,Yes,Yes,"Tesco, Tadcaster Rd",booksmusic|cansfoil|plasticbottles|textiles|glass|cartons|cardboard|paper|
+49,-1.0785914020,53.9660960700,"Londis, Townend Street",Guildhall,Yes,No,No,No,No,Yes,No,No,No,No,No,No,No,"Londis, Townend Street",textiles|
+50,-1.0836725090,53.9658647200,Union Terrace Car Park,Guildhall,Yes,No,Yes,No,No,Yes,No,Yes,Yes,No,No,No,Yes,Union Terrace Car Park,cansfoil|textiles|glass|shoes|paper|
+51,-0.9613704290,53.8955688400,Wheldrake Village Hall,Wheldrake,No,No,No,No,No,No,No,Yes,No,No,No,No,Yes,Wheldrake Village Hall,glass|paper|

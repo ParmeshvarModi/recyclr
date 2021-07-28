@@ -1,0 +1,6 @@
+id,pickup_date,recycling_bank_id,status
+f657e1e265134fa6b8f5f04022ff8fb5,,0,Order Received
+d202d96622c94941ab76b36d663e9496,,0,Order Received
+7fa8ce3b22174f85903d95cbbeb13edd,23-04-2021,2,Order Received
+b5c378146cb141a6bc9e1ae7a31a26fc,23-04-2021,4,Order Cancelled
+63d5b982c2e44b8d83a084190ff3f025,23-04-2021,4,Order Cancelled
