@@ -36,9 +36,9 @@ public class OrderController {
         return orderOutputDTO;
     }
 
-    @GetMapping("/all")
-    public List<Order> getAllOrders() {
-        return orderService.getAllOrders();
+    @GetMapping("/all/{userId}")
+    public List<Order> getAllOrders(@PathVariable String userId) {
+        return orderService.getAllOrders(userId);
     }
 
     @PostMapping(value = "/cancel/{id}")
