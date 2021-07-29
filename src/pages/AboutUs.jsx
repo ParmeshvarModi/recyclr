@@ -1,16 +1,8 @@
-import Grid from '@material-ui/core/Grid';
-
-import RecycleBox from 'components/recycleBox';
-
 import Typography from '@material-ui/core/Typography';
 
-
-export default function Home() {
+const AboutUs = () => {
 	return (
-
-		<Grid container style={{ padding: '4px' }}>
-			
-					<div style={{ padding: '1rem 2rem' }}>
+		<div style={{ padding: '1rem 2rem' }}>
 			<Typography variant='h4' gutterBottom>
 				About us
 			</Typography>
@@ -34,15 +26,10 @@ export default function Home() {
 				<li> Charity Banks</li>
 			</ul>
 			<Typography variant='subtitle1' gutterBottom>
-				Users can login to the website and search for pick up centres around them. They can then raise a pick-up request for the waste to be collected on a desired date. Please use the locator below to book pick up.
+				Users can login to the website and search for pick up centres around them. They can then raise a pick-up request for the waste to be collected on a desired date.
 			</Typography>
 		</div>
-
-		<Grid item xs={12} style={{ height: '30rem' }}>
-				<RecycleBox />
-			</Grid>
-
-		</Grid>
-
 	);
-}
+};
+
+export default AboutUs;

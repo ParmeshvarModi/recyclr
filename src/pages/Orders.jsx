@@ -107,8 +107,9 @@ export default function ItemSelectionBox() {
 										<Paper style={{ padding: '4px 8px' }}>
 											<Typography variant='h6'>{e.title}</Typography>
 											<div className={classes.flex}>
+												Pick Up Date On: {e.pickupDate}
 												<Button size='small' color='primary' className={classes.btn2} onClick={() => handleClick(e.id, index)}>
-													remove
+													Cancel Request
 												</Button>
 											</div>
 										</Paper>

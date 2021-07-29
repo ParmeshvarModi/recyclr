@@ -89,7 +89,7 @@ export default function Singup({ updateLoginState }) {
 							<TextField fullWidth label='Contact no' name='contactNo' variant='outlined' type='number' onChange={handleChange} value={state.contactNo} />
 						</Grid>
 						<Grid item xs={8}>
-							<TextField fullWidth label='PostCode' name='zipcode' variant='outlined' type='number' onChange={handleChange} value={state.zipcode} />
+							<TextField fullWidth label='PostCode' name='zipcode' variant='outlined' type='textarea' onChange={handleChange} value={state.zipcode} />
 						</Grid>
 						<Grid item xs={8}>
 							<TextField fullWidth label='Address' variant='outlined' type='textarea' name='address' onChange={handleChange} value={state.address} />

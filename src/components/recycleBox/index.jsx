@@ -110,8 +110,8 @@ function MainBox() {
 
 		const res = await axios.post(`${process.env.REACT_APP_API_BASEURL}api/secured/recyclebank/recycling-banks`, {
 			categories: itemList.join('|'),
-			x: lat,
-			y: lon,
+			x: lon,
+			y: lat,
 		});
 		if (res.status === 200) {
 			setcentersList(res.data);

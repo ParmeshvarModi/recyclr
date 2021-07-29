@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
 	p: {
 		color: 'white',
 		textDecoration: 'none',
+		marginRight: '10px',
+		marginLeft: '10px',
 	},
 }));
 
@@ -40,27 +42,37 @@ function App() {
 			<AppBar position='static' style={{ background: '#8bc63e', marginBottom: '1rem' }}>
 				<Toolbar>
 					<div style={{ flexGrow: 1 }}>
+													<Link to='/' className={classes.p}>
 						<img src={logo} alt='Logo' className={classes.logo} />
+						</Link>
 					</div>
-					{isLogin ? (
-						<div>
-							<Link to='/orders' className={classes.p}>
-								Orders
-							</Link>
-							<Button style={{ color: 'white' }} onClick={handleLogout}>
-								Logout
-							</Button>
-						</div>
-					) : (
-						<>
-							<Link to='/login' className={classes.p}>
-								login
-							</Link>
-						</>
-					)}
+					<div>
+
+						<Link to='/faq' className={classes.p}>
+							Faq
+						</Link>
+						{'|'}
+						{isLogin ? (
+							<>
+								<Link to='/orders' className={classes.p}>
+									Orders
+								</Link>
+								{'|'}
+								<Button style={{ color: 'white' }} onClick={handleLogout}>
+									Logout
+								</Button>
+							</>
+						) : (
+							<>
+								<Link to='/login' className={classes.p}>
+									login
+								</Link>
+							</>
+						)}
+					</div>
 				</Toolbar>
 			</AppBar>
-			<Routes updateLoginState={setisLogin} />
+			<Routes updateLoginState={setisLogin} isLogin={isLogin} />
 		</Router>
 	);
 }
