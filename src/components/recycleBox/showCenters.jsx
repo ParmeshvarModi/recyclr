@@ -84,7 +84,7 @@ export default function ItemSelectionBox({ centerlist }) {
 	const [selectedDate, setselectedDate] = useState(new Date().toISOString().split('T')[0]);
 
 	useEffect(() => {
-		centerlist[0] && setLocation([centerlist[0].x, centerlist[0].y]);
+		centerlist[0] && setLocation([centerlist[0].y, centerlist[0].x]);
 	}, []);
 
 	const changeView = () => {
@@ -159,7 +159,7 @@ export default function ItemSelectionBox({ centerlist }) {
 								centerlist
 									.filter((e) => e.distance * 0.001 < 30)
 									.map((e, index) => (
-										<Marker position={[e.x, e.y]} key={'map-marker-' + index}>
+										<Marker position={[e.y, e.x]} key={'map-marker-' + index}>
 											<Popup>{e.site_name_}</Popup>
 										</Marker>
 									))}

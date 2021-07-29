@@ -15,22 +15,20 @@ public class Order {
     private int recyclingBankId;
     private String pickupDate;
     private String status = "Order Received";
+    private String userId;
+
 
     public Order() {
         this.id = UUID.randomUUID().toString().replace("-","");
     }
 
-    public Order(String id, int recyclingBankId, String pickupDate, String status) {
+    public Order(String id, int recyclingBankId, String pickupDate, String status, String userId) {
         this.id = id;
         this.recyclingBankId = recyclingBankId;
         this.pickupDate = pickupDate;
         this.status = status;
-    }
 
-    public Order(int recyclingBankId, String pickupDate, String status) {
-        this.recyclingBankId = recyclingBankId;
-        this.pickupDate = pickupDate;
-        this.status = status;
+        this.userId = userId;
     }
 
     public String getId() {
@@ -65,13 +63,22 @@ public class Order {
         this.status = status;
     }
 
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
-        return "Order{" +
-                "id='" + id + '\'' +
-                ", recyclingBankId='" + recyclingBankId + '\'' +
-                ", pickupDate='" + pickupDate + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+        return "Order [id=" + id + ", pickupDate=" + pickupDate + ", recyclingBankId=" + recyclingBankId + ", status="
+                + status + ", userId=" + userId + "]";
     }
+
+    
+
+    
 }

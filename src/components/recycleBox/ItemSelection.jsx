@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	headerBtnContainer: {
 		display: 'flex',
-		justifyContent: 'flex-end',
+		justifyContent: 'space-between',
 		padding: '10px 15px',
 		borderBottomLeftRadius: 0,
 		borderBottomRightRadius: 0,
@@ -92,6 +92,7 @@ export default function ItemSelectionBox({ dataList, setDataList, loadLocationPa
 		<Container className={classes.root}>
 			<div className={classes.root}>
 				<Paper className={classes.headerBtnContainer}>
+				<p style={{fontSize:'1rem',fontWeight:'600'}}>Recycling Locator</p>
 					<Button variant='contained' size='medium' color='primary' className={classes.btn} onClick={loadLocationPage}>
 						Continue
 					</Button>
