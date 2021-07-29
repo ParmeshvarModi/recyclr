@@ -17,6 +17,7 @@ public class Order {
     private String status = "Order Received";
     private String userId;
 
+
     public Order() {
         this.id = UUID.randomUUID().toString().replace("-","");
     }
@@ -26,6 +27,7 @@ public class Order {
         this.recyclingBankId = recyclingBankId;
         this.pickupDate = pickupDate;
         this.status = status;
+
         this.userId = userId;
     }
 
@@ -60,6 +62,7 @@ public class Order {
     public void setStatus(String status) {
         this.status = status;
     }
+
 
     public String getUserId() {
         return userId;

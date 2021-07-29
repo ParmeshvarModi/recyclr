@@ -1,5 +1,6 @@
 package com.java.recyclebank.services;
 
+
 import com.java.recyclebank.models.RecyclingBank;
 import com.java.recyclebank.repositories.RecyclingBankRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -22,7 +24,7 @@ public class RecyclingBankService {
     @Autowired
     private RecyclingBankRepository recyclingBankRepository;
 
-    public List<RecyclingBank> getAllRecycleBank() {
+   public List<RecyclingBank> getAllRecycleBank() {
         return recyclingBankRepository.findAll();
     }
 
@@ -33,6 +35,7 @@ public class RecyclingBankService {
         recyclingBankRepository.findAll().forEach(recyclebank -> {
             Arrays.asList(recyclebank.getCategories().split("\\|")).forEach(category -> {
                 if (recyclingMaterials.contains(category))
+
                     listOfRecyclingBanks.add(recyclebank);
             });
         });
@@ -49,6 +52,7 @@ public class RecyclingBankService {
             elem.setDistance(Double.valueOf(distanceFormatter.format(distance)));
             filteredListOfRecyclingBanks.remove(idx);
             filteredListOfRecyclingBanks.add(idx, elem);
+
             // System.out.println(distance);
         }
 
@@ -89,5 +93,6 @@ public class RecyclingBankService {
     /* The function to convert radians into decimal */
     private double rad2deg(double rad) {
         return (rad * 180.0 / Math.PI);
+
     }
 }

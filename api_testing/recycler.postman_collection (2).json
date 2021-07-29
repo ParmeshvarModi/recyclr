@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "89b6d4e9-44f2-4d86-90a9-86872cbd8292",
+		"name": "recycler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"dummyuser@email.com\",\r\n    \"password\" : \"dummyuser\",\r\n    \"contactNo\" : \"9876543210\",\r\n    \"address\" : \"dl aeigreig heruieighwalru gwruiger\",\r\n    \"zipcode\" : 154222,\r\n    \"name\" : \"Dummy User\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"dummyuser@email.com\",\r\n    \"password\" : \"dummyuser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recyclingBankId\" : 4,\r\n    \"pickupDate\" : \"23-04-2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/api/secured/orders/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"secured",
+						"orders",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8089/api/secured/orders/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"secured",
+						"orders",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8089/api/secured/orders/cancel/63d5b982c2e44b8d83a084190ff3f025",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"secured",
+						"orders",
+						"cancel",
+						"63d5b982c2e44b8d83a084190ff3f025"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRecyclingBank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8089/api/secured/recyclebank/recycling-banks/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"secured",
+						"recyclebank",
+						"recycling-banks",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get nearest recycling banks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"x\": -1.1001708760,\r\n    \"y\": 53.9925224500,\r\n    \"categories\" : \"textiles|shoes\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/api/secured/recyclebank/recycling-banks",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"secured",
+						"recyclebank",
+						"recycling-banks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

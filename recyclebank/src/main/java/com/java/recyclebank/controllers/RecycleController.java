@@ -18,6 +18,7 @@ public class RecycleController {
 
     @PostMapping("/recycling-banks")
     public List<RecyclingBank> getRecyclingBanksByRecyclingMaterial(@RequestBody RecyclingBank recyclingBank)
+
     {
         System.out.println(recyclingBank.toString());
         // System.out.println(Arrays.asList(recyclingBank.getCategories().split("\\|")).toString());
