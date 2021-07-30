@@ -104,11 +104,11 @@ export default function ItemSelectionBox({ centerlist }) {
 			alert('Please login.');
 			history.push('/login');
 		} else {
-			const userid = localStorage.getItem('user');
+			const userId = localStorage.getItem('user');
 			const res = await axios.post(`${process.env.REACT_APP_API_BASEURL}api/secured/orders/create`, {
 				recyclingBankId: activeSelectedCenterId,
 				pickupDate: selectedDate.split('-').reverse().join('-'),
-				userid,
+				userId,
 			});
 			if (res.status === 200) {
 				alert(res.data.message);

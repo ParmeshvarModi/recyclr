@@ -58,7 +58,7 @@ export default function Login({ updateLoginState }) {
 		if (res.status === 200 && res.data.access_token) {
 			alert(res.data.message);
 			localStorage.setItem('token', `Bearer ${res.data.access_token}`);
-			localStorage.setItem('user', `Bearer ${res.data.data.id}`);
+			localStorage.setItem('user', `${res.data.data.id}`);
 			updateLoginState(true);
 			history.push('/');
 		} else {
