@@ -58,9 +58,9 @@ export default function Singup({ updateLoginState }) {
 
 	const handleSignUp = async () => {
 		const res = await axios.post(`${process.env.REACT_APP_API_BASEURL}auth/register`, state);
-		if (res.status === 200 && res.data.accessToken) {
+		if (res.status === 200 && res.data.access_token) {
 			alert('Registration successful.');
-			localStorage.setItem('token', `Bearer ${res.data.accessToken}`);
+			localStorage.setItem('token', `Bearer ${res.data.access_token}`);
 			localStorage.setItem('user', `Bearer ${res.data.data.id}`);
 			updateLoginState(true);
 			history.push('/');

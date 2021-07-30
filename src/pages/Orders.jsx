@@ -73,21 +73,19 @@ export default function ItemSelectionBox() {
 
 	useEffect(() => {
 		async function fetchList() {
-			const res = await axios.get(`${process.env.REACT_APP_API_BASEURL}api/secured/orders/all`);
+			const res = await axios.get(`${process.env.REACT_APP_API_BASEURL}api/secured/orders/all/${localStorage.getItem('user')}`);
 			if (res.status === 200) {
-				setcenterlist(res.data);
+				setcenterlist(prev=>(res.data.filter(e=>e.status!=='Order Cancelled')));
 			}
 		}
 		fetchList();
 	}, []);
 
-	const handleClick = async (id, index) => {
+	const handleClick = async (id) => {
 		const res = await axios.post(`${process.env.REACT_APP_API_BASEURL}api/secured/orders/cancel/${id}`);
 		if (res.status === 200) {
 			alert(res.data?.message);
-			let tempList = centerlist;
-			tempList[index].status = 'Order Cancelled';
-			setcenterlist(tempList);
+			setcenterlist(prev=>(prev.filter(e=>e.id!==id)));
 		} else {
 			alert('Something went wrong');
 		}
@@ -101,14 +99,13 @@ export default function ItemSelectionBox() {
 					<Grid container spacing={3}>
 						{centerlist &&
 							centerlist
-								.filter((e) => e.status !== 'Order Cancelled')
 								.map((e, index) => (
 									<Grid item xs={12} sm={6} key={'center-list-item-' + index}>
 										<Paper style={{ padding: '4px 8px' }}>
 											<Typography variant='h6'>{e.title}</Typography>
 											<div className={classes.flex}>
 												Pick Up Date On: {e.pickupDate}
-												<Button size='small' color='primary' className={classes.btn2} onClick={() => handleClick(e.id, index)}>
+												<Button size='small' color='primary' className={classes.btn2} onClick={() => handleClick(e.id)}>
 													Cancel Request
 												</Button>
 											</div>

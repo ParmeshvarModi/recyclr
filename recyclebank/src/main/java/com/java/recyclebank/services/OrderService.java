@@ -14,9 +14,9 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public List<Order> getAllOrders()
+    public List<Order> getAllOrders(String userId)
     {
-        return orderRepository.findAll();
+        return orderRepository.findByUserId(userId);
     }
 
     public boolean createNewOrder(Order order)

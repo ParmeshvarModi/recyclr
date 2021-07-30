@@ -1,8 +1,11 @@
 package com.java.recyclebank.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import java.util.UUID;
 
 @Entity
@@ -12,6 +15,7 @@ public class User {
     @Id
     private String id;
     private String name;
+    @Column(unique = true)
     private String email;
     private String contactNo;
     private String address;
